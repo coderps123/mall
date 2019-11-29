@@ -58,6 +58,6 @@
     color: hotpink;
   }
   .active span{
-    border-bottom: 4px solid hotpink;
+    border-bottom: 3px solid hotpink;
   }
 </style>

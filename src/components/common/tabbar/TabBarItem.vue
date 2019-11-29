@@ -27,7 +27,13 @@
     methods: {
       // 点击按钮，实现路由跳转
       itemClick() {
-        this.$router.replace(this.path)
+        this.$router.replace(this.path).catch(err => {})
+
+        // if (this.$route.path != this.path) {
+        //   this.$router.replace(this.path)
+        //   console.log(this.$route.path);
+        //   console.log(this.path);
+        // }
       }
     }
   }

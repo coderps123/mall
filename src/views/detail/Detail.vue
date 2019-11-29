@@ -1,7 +1,8 @@
 <template>
   <div id="detail">
     <detail-nav-bar class="nav-bar"
-                    @itemClick="itemClick" ref="nav"/>
+                    @itemClick="itemClick"
+                    ref="nav"/>
     <scroll class="content"
             ref="scroll"
             :probeType="3"
@@ -97,10 +98,10 @@
         // 6000    y   js中最大的值   index：3
         // console.log(Number.MAX_VALUE);
         for (let i = 0; i < length; i++) {
-          if (this.changeIndex != i  && ( y > this.scrollToY[i] && y < this.scrollToY[i+1])) {
+          if (this.changeIndex != i  && ( y >= this.scrollToY[i] && y < this.scrollToY[i+1])) {
             this.changeIndex = i
             this.$refs.nav.currentIndex = this.changeIndex
-            console.log(this.changeIndex);
+            // console.log(this.changeIndex);
           }
         }
         this.isShowBackTop = y > 1000
@@ -144,7 +145,7 @@
       getDetail(this.iid).then(res => {
         const data = res.result
         this.topImages = data.itemInfo.topImages
-        console.log(data);
+        // console.log(data);
 
         // 将获取到的数据保存到goods中
         this.goods = new Goods(data.itemInfo, data.columns, data.shopInfo.services)

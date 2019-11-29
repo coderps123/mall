@@ -17,8 +17,12 @@ Vue.use(VueLazyload,{
   loading: require('./assets/img/common/placeholder.png')
 })
 
+
+
 new Vue({
   render: h => h(App),
   router,
   store
 }).$mount('#app')
+
+

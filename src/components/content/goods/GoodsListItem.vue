@@ -1,5 +1,5 @@
 <template>
-  <div class="goods-item">
+  <div class="goods-item" v-if="Object.keys(goodsitem).length != 0">
     <a>
       <img v-lazy="showImage" alt=""
             @load="itemLoad"
@@ -26,7 +26,8 @@
     },
     computed: {
       showImage() {
-        return this.goodsitem.image || this.goodsitem.show.img
+        //             detail              category                 home
+        return this.goodsitem.image || this.goodsitem.img || this.goodsitem.show.img
       }
     },
     methods: {
